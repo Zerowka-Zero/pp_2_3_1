@@ -2,11 +2,11 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
-    <title>Users</title>
+    <title>Все пользователи</title>
 
 </head>
 <body>
-<h1>Users</h1>
+<h1>Пользователи</h1>
 <table>
     <tr>
         <th>ID</th>
@@ -21,17 +21,17 @@
         <td>
 <!--            <a th:href="@{/users/{name}/edit (name=${user.id})}" class="button">Edit</a>-->
             <form  th:action="@{/users/{name}/edit (name=${user.id})}">
-                <button type="submit" class="button">Редактирование</button>
+                <button type="submit" class="button">Редактировать</button>
             </form>
             <form th:method="DELETE" th:action="@{/users/{id} (id=${user.id})}">
-                <button type="submit" class="button">Удаление</button>
+                <button type="submit" class="button">Удалить</button>
             </form>
         </td>
     </tr>
 </table>
 <!--<a th:href="@{users/new}" class="button">Add User</a>-->
 <form  th:action="@{users/new}">
-    <button type="submit" class="button">Добавление пользователя</button>
+    <button type="submit" class="button">Добавить нового пользователя</button>
 </form>
 </body>
 </html>
