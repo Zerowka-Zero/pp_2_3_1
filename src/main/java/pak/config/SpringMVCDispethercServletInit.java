@@ -31,6 +31,8 @@ public class SpringMVCDispethercServletInit extends AbstractAnnotationConfigDisp
     @Override
     public void onStartup(ServletContext aServletContext) throws ServletException {
         super.onStartup(aServletContext);
+        // добавляем кастомные фильтр на кодировку и
+        // чтение скрытых запросов
         registerCharacterEncodingFilter(aServletContext);
         registerHiddenFieldFilter(aServletContext);
     }
@@ -40,7 +42,8 @@ public class SpringMVCDispethercServletInit extends AbstractAnnotationConfigDisp
                 // /* означает что при любом запросе будет обрабатываться данный фильтр
                 new HiddenHttpMethodFilter()).addMappingForUrlPatterns(null, true, "/*");
     }
-
+    // добавляем фильтр на кодировку UTF-8 для корректного считывания
+    // кириллицы
     private void registerCharacterEncodingFilter(ServletContext aContext) {
         EnumSet<DispatcherType> dispatcherTypes = EnumSet.of(DispatcherType.REQUEST, DispatcherType.FORWARD);
 

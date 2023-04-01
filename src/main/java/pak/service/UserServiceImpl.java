@@ -1,5 +1,6 @@
 package pak.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pak.dao.UserDAO;
@@ -13,6 +14,7 @@ public class UserServiceImpl implements UserService{
     public UserServiceImpl(UserDAO userDao) {
         this.userDao = userDao;
     }
+
     @Override
     public List<User> findAll() {
         return userDao.findAll();
