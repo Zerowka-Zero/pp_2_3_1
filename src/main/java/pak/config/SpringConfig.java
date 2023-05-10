@@ -38,6 +38,7 @@ public class SpringConfig implements WebMvcConfigurer {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         // используем context чтобы настроить thymeleaf
         templateResolver.setApplicationContext(applicationContext);
+        templateResolver.setCharacterEncoding("UTF-8");
         // задается папка где будут лежать представления
         templateResolver.setPrefix("/WEB-INF/views/");
         // какие будут у представлений расширения
